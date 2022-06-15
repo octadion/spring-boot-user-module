@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html>
+    <head>
+        <title>Add user</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <form action="#" th:action="@{/adduser}" th:object="${user}" method="post">
+            <label for="name">Name</label>
+            <input type="text" th:field="*{name}" id="name" placeholder="name"></input>
+            <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span>
+            <label for="email">Email</label>
+            <input type="text" th:field="*{email}" id="email" placeholder="email"></input>
+            <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></span>
+            <input type="submit" value="Add User"></input>
+        </form>
+    </body>
+</html>
